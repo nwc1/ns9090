@@ -1,0 +1,83 @@
+app.component.html
+
+<html>
+<body>
+<h1 style="text-align: center;">Student Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Roll No</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Course</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.rollNo }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.age }}</td>
+      <td>{{ student.course }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet />
+</body>
+</html>
+
+
+
+
+
+app.component.ts
+
+
+
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet,CommonModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+
+export class AppComponent {
+  students = [
+    { rollNo: 1, name: 'Alice', age: 20, course: 'Computer Science' },
+    { rollNo: 2, name: 'Bob', age: 22, course: 'Mechanical Engineering' },
+    { rollNo: 3, name: 'Charlie', age: 21, course: 'Electrical Engineering' },
+    { rollNo: 4, name: 'David', age: 23, course: 'Mathematics' },
+    { rollNo: 5, name: 'Eva', age: 20, course: 'Physics' },
+    { rollNo: 6, name: 'Frank', age: 22, course: 'Chemistry' },
+    { rollNo: 7, name: 'Grace', age: 21, course: 'Biology' },
+    { rollNo: 8, name: 'Hank', age: 23, course: 'Economics' },
+    { rollNo: 9, name: 'Ivy', age: 20, course: 'Law' },
+    { rollNo: 10, name: 'Jack', age: 22, course: 'History' },
+  ];
+}
+
+
+
+app.component.css
+
+
+table {
+  width: 50%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}

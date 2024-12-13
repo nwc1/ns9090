@@ -1,0 +1,72 @@
+app.component.html
+
+<h1>Student Details in Pune</h1>
+
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #ddd; padding: 8px;">ID</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">Name</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">Age</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of getStudentsInPune()">
+      <td style="border: 1px solid #ddd; padding: 8px;">{{ student.id }}</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">{{ student.name }}</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">{{ student.age }}</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">{{ student.city }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<router-outlet />
+
+
+
+
+app.component.ts
+
+
+
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+interface Student {
+  id: number;
+  name: string;
+  age: number;
+  city: string;
+}
+
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet,CommonModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  students: Student[] = [
+    { id: 1, name: 'Rajesh', age: 20, city: 'Pune' },
+    { id: 2, name: 'Sita', age: 21, city: 'Mumbai' },
+    { id: 3, name: 'Amit', age: 22, city: 'Pune' },
+    { id: 4, name: 'Neha', age: 23, city: 'Delhi' },
+    { id: 5, name: 'Rahul', age: 24, city: 'Pune' },
+    { id: 6, name: 'Priya', age: 25, city: 'Chennai' },
+  ];
+
+  getStudentsInPune(): Student[] {
+    return this.students.filter((student) => student.city === 'Pune');
+  }
+}
+
+
+
+app.component.css
+
+
