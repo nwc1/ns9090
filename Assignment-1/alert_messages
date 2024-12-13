@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Messages</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #alert-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="mt-5">Bootstrap Alert Messages</h1>
+
+    <div id="alert-container"></div>
+    
+    <div class="mt-4">
+        <button class="btn btn-primary" onclick="showAlert('primary')">Primary Alert</button>
+        <button class="btn btn-secondary" onclick="showAlert('secondary')">Secondary Alert</button>
+        <button class="btn btn-success" onclick="showAlert('success')">Success Alert</button>
+        <button class="btn btn-danger" onclick="showAlert('danger')">Danger Alert</button>
+        <button class="btn btn-warning" onclick="showAlert('warning')">Warning Alert</button>
+        <button class="btn btn-info" onclick="showAlert('info')">Info Alert</button>
+        <button class="btn btn-light" onclick="showAlert('light')">Light Alert</button>
+        <button class="btn btn-dark" onclick="showAlert('dark')">Dark Alert</button>
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function showAlert(alertType) {
+
+        const messages = {
+            primary: 'This is a primary alert—check it out!',
+            secondary: 'This is a secondary alert—check it out!',
+            success: 'This is a success alert—check it out!',
+            danger: 'This is a danger alert—check it out!',
+            warning: 'This is a warning alert—check it out!',
+            info: 'This is an info alert—check it out!',
+            light: 'This is a light alert—check it out!',
+            dark: 'This is a dark alert—check it out!'
+        };
+
+
+        const alertContainer = document.getElementById('alert-container');
+
+
+        const alertElement = document.createElement('div');
+        alertElement.className = `alert alert-${alertType} alert-dismissible fade show`;
+        alertElement.role = 'alert';
+        alertElement.innerHTML = `
+            ${messages[alertType]}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        `;
+
+
+        alertContainer.innerHTML = '';
+
+
+        alertContainer.appendChild(alertElement);
+    }
+</script>
+
+</body>
+</html>
+

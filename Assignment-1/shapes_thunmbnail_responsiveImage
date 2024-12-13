@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Image Shapes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .circle-img {
+            border-radius: 50%;
+        }
+        .thumbnail-img {
+            display: block;
+            width: 800px;
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 4px;
+            background-color: #fff;
+        }
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Image Shapes</h1>
+
+    <div class="mb-4">
+        <h2>Circle Image</h2>
+        <img src="https://picsum.photos/150?random=1" alt="Circle Image" class="circle-img" width="150" height="150">
+    </div>
+
+
+    <div class="mb-4">
+        <h2>Thumbnail Image</h2>
+        <img src="https://picsum.photos/1000?random=2" alt="Thumbnail Image" class="thumbnail-img">
+    </div>
+
+    <!-- Responsive Image -->
+    <div>
+        <h2>Responsive Image</h2>
+        <img src="https://picsum.photos/600?random=3" alt="Responsive Image" class="responsive-img">
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+

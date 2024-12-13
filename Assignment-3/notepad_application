@@ -1,0 +1,141 @@
+app.component.ts
+import { Component } from '@angular/core';
+import { NoteService } from './note.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  notes: { content: string, createdAt: string }[] = [];
+  newNote: string = '';
+
+  constructor(private noteService: NoteService) {}
+
+  addNote() {
+    if (this.newNote.trim()) {
+      const createdAt = this.noteService.getCurrentDateTime(); // Correct method name
+      this.notes.push({ content: this.newNote, createdAt }); // Property name must be `createdAt`
+      this.newNote = '';
+    }
+  }
+}
+
+app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { NoteService } from './note.service';
+import { A3Q1Component } from './a3-q1/a3-q1.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    A3Q1Component
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [NoteService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+app.component.css
+/* Container styling */
+.notepad-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.notepad-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+}
+
+/* Textarea styling */
+.note-input {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  resize: vertical; /* Allows vertical resizing only */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Button styling */
+.add-note-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+}
+
+.add-note-button:hover {
+  background-color: #0056b3;
+}
+
+/* List styling */
+.note-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Note item styling */
+.note-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  margin-bottom: 10px;
+}
+
+.note-content {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+.note-timestamp {
+  color: #666;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+}
+
+note.service.ts
+import { Injectable } from '@angular/core';
+@Injectable({
+  providedIn: 'root'
+})
+export class NoteService {
+  constructor() { }
+  getCurrentDateTime(): string {
+    const now = new Date();
+    return now.toLocaleString(); // Or use any custom format you prefer
+  }
+}
+
+

@@ -1,0 +1,389 @@
+BLog.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nash Creations Blog</title>
+    <link rel="stylesheet" href="/home/symsc43/Desktop/MSC-2/FS/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+        .navbar {
+            margin-bottom: 20px;
+            background-color: #000b17;
+            
+        }
+        .blog-post {
+            margin-bottom: 40px;
+        }
+        .blog-post img {
+            max-width: 100%;
+            height: 400px;
+        }
+        .footer {
+            padding: 5px;
+            background-color: #000b17;
+        }
+        .navbar-nav .nav-link {
+            margin-right: 15px;
+            color: white;
+        }
+        .text-center, .navbar-brand {
+			color: white;        
+        }
+        .active {
+        	text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Nash Creations</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Main Content -->
+            <main class="col-md-8">
+                <!-- Blog Post 1 -->
+                <article class="blog-post">
+    <h2 class="blog-post-title">Understanding Artificial Intelligence</h2>
+    <p class="blog-post-meta">August 21, 2024 by <a href="#">Nash Creations</a></p>
+    <img src="ai.jpg" alt="Artificial Intelligence" width="800" height="400">
+    <p>Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions. AI can be categorized into different types such as narrow AI, general AI, and superintelligent AI. Narrow AI, or weak AI, is designed for a specific task like facial recognition or voice assistants.</p>
+
+    <div id="more-content-ai" style="display: none;">
+        <h3>More About Artificial Intelligence</h3>
+        <p>AI technologies have advanced rapidly over the past decade, leading to significant improvements in various fields such as healthcare, finance, and transportation. For instance, machine learning algorithms can now analyze vast amounts of data to provide more accurate predictions and insights. Moreover, the integration of AI with other technologies, such as the Internet of Things (IoT), is creating new opportunities and challenges for businesses and individuals alike.</p>
+        <p>One of the critical aspects of AI development is ethical considerations. As AI systems become more integrated into everyday life, it is essential to address issues related to privacy, bias, and accountability. Researchers and policymakers are working together to establish guidelines and frameworks to ensure that AI is developed and used responsibly.</p>
+    </div>
+
+    <!-- Button to toggle content visibility -->
+    <a id="toggle-btn-ai" class="btn btn-primary" href="#">Read More</a>
+</article>
+
+
+
+
+                <!-- Blog Post 2 -->
+<article class="blog-post">
+    <h2 class="blog-post-title">The Rise of Machine Learning</h2>
+    <p class="blog-post-meta">August 20, 2024 by <a href="#">Nash Creations</a></p>
+    <img src="ml.jpg" alt="Machine Learning" width="800" height="400">
+    <p>Machine Learning (ML) is a subset of AI that involves the use of algorithms and statistical models to enable machines to improve their performance on tasks through experience. ML can be divided into supervised learning, unsupervised learning, and reinforcement learning. Each type plays a crucial role in various applications such as predictive analytics and recommendation systems.</p>
+
+    <!-- Additional content hidden by default -->
+    <div id="more-content-ml" style="display: none;">
+        <h3>Deep Dive into Machine Learning</h3>
+        <p>Machine learning algorithms have a wide range of applications, from predictive maintenance in industrial settings to personalizing recommendations on streaming platforms. The field continues to evolve, with ongoing research focusing on enhancing algorithmic efficiency, robustness, and interpretability.</p>
+        <p>One of the significant challenges in machine learning is the need for large amounts of high-quality data. Researchers are developing methods to address this issue, including techniques for data augmentation and transfer learning. Additionally, ethical considerations, such as ensuring fairness and transparency in ML models, are increasingly important in the development process.</p>
+    </div>
+
+    <!-- Button to toggle content visibility -->
+    <a id="toggle-btn-ml" class="btn btn-primary" href="#">Read More</a>
+</article>
+
+<!-- Blog Post 3 -->
+<article class="blog-post">
+    <h2 class="blog-post-title">Deep Learning: A Subset of Machine Learning</h2>
+    <p class="blog-post-meta">August 19, 2024 by <a href="#">Nash Creations</a></p>
+    <img src="dl.jpg" alt="Deep Learning" width="800" height="400">
+    <p>Deep Learning (DL) is a specialized area within machine learning that focuses on neural networks with many layers (hence "deep"). It has shown remarkable success in areas such as image recognition, natural language processing, and autonomous systems. DL models are designed to automatically learn representations from data, making them highly effective for complex tasks.</p>
+
+    <!-- Additional content hidden by default -->
+    <div id="more-content-dl" style="display: none;">
+        <h3>Exploring Deep Learning Techniques</h3>
+        <p>Deep learning techniques, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs), have revolutionized various fields by providing state-of-the-art performance on tasks like speech recognition and computer vision. These models leverage large datasets and high computational power to achieve impressive results.</p>
+        <p>As deep learning continues to advance, researchers are exploring ways to make these models more efficient and interpretable. Techniques like model pruning and knowledge distillation aim to reduce the computational requirements while maintaining model performance. The field is also seeing increased focus on developing models that can learn from smaller datasets and generalize better to unseen data.</p>
+    </div>
+
+    <!-- Button to toggle content visibility -->
+    <a id="toggle-btn-dl" class="btn btn-primary" href="#">Read More</a>
+</article>
+
+            </main>
+            <!-- Sidebar -->
+            <aside class="col-md-4">
+                <div class="p-3 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0">This blog explores various topics related to Artificial Intelligence, Machine Learning, and Deep Learning. Stay updated with the latest trends, technologies, and insights in the AI field.</p>
+                </div>
+                <div class="p-3">
+                    <h4 class="fst-italic">Relevant Posts</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.progressive.com/lifelanes/on-the-road/future-of-electric-cars/">Future Of Electric Cars</a></li>
+                        <li><a href="https://smartbuildingsmagazine.com/features/the-rise-of-data-analytics">Rise Of Data Analysis</a></li>
+                        <li><a href="https://www.monocubed.com/blog/is-web-development-dying/">Murder Of Web Developers</a></li>
+                    </ul>
+                </div>
+                <div class="p-3 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">Categories</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Artificial Intelligence</a></li>
+                        <li><a href="#">Machine Learning</a></li>
+                        <li><a href="#">Deep Learning</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-center">© Nash Creations Blog. All rights reserved.</p>
+            <p class="text-center">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+	
+    <script src="/home/symsc43/Desktop/MSC-2/FS/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Function to handle the toggling of content
+    function toggleContent(buttonId, contentId) {
+        var button = document.getElementById(buttonId);
+        var content = document.getElementById(contentId);
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                button.textContent = 'Read Less';
+            } else {
+                content.style.display = 'none';
+                button.textContent = 'Read More';
+            }
+        });
+    }
+
+
+about.html
+    // Initialize the toggle functionality for each blog post
+    toggleContent('toggle-btn-ai', 'more-content-ai');
+    toggleContent('toggle-btn-ml', 'more-content-ml');
+    toggleContent('toggle-btn-dl', 'more-content-dl');
+</script>    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nash Creations Blog</title>
+    <link rel="stylesheet" href="/home/symsc43/Desktop/MSC-2/FS/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+        .navbar {
+            margin-bottom: 20px;
+            background-color: #000b17;
+            
+        }
+        .blog-post {
+            margin-bottom: 40px;
+        }
+        .blog-post img {
+            max-width: 100%;
+            height: 400px;
+        }
+        .footer {
+            padding: 5px;
+            background-color: #000b17;
+        }
+        .navbar-nav .nav-link {
+            margin-right: 15px;
+            color: white;
+        }
+        .text-center, .navbar-brand {
+			color: white;        
+        }
+        .active {
+        	text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="A1Q2.html">Nash Creations</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="A1Q2.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <img src="ai.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">About Us</h5>
+                    <p class="card-text">Travel and tourism is the largest service industry in India. It provides heritage, cultural, medical, business and sports tourism. The main objective of this sector is to develop and promote tourism, maintain competitiveness of India as tourist destination and improve and expand existing tourism products to ensure employment generation and economic growth. In this section, we provide information about various tourist destinations, modes of travel, accommodation and approved travel agents. .</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-center">© Nash Creations Blog. All rights reserved.</p>
+            <p class="text-center">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+	
+    <script src="/home/symsc43/Desktop/MSC-2/FS/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+</body>
+</html>
+
+Contact.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nash Creations Blog</title>
+    <link rel="stylesheet" href="/home/symsc43/Desktop/MSC-2/FS/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+        .navbar {
+            margin-bottom: 20px;
+            background-color: #000b17;
+            
+        }
+        .blog-post {
+            margin-bottom: 40px;
+        }
+        .blog-post img {
+            max-width: 100%;
+            height: 400px;
+        }
+        .footer {
+            padding: 5px;
+            background-color: #000b17;
+        }
+        .navbar-nav .nav-link {
+            margin-right: 15px;
+            color: white;
+        }
+        .text-center, .navbar-brand {
+			color: white;        
+        }
+        .active {
+        	text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="A1Q2.html">Nash Creations</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="A1Q2.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feedback, or inquiries, feel free to reach out to us.</p>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-center">© Nash Creations Blog. All rights reserved.</p>
+            <p class="text-center">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+	
+    <script src="/home/symsc43/Desktop/MSC-2/FS/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+</body>
+</html>

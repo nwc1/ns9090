@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constant Image Carousel</title>
+    <link rel="stylesheet" href="/home/symsc43/Desktop/MSC-2/FS/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <style>
+        body{
+    		margin: 30px 70px;
+    	}
+        .carousel-indicators button {
+            border-radius: 50%;
+            background-color: gray; /* Color for inactive indicators */
+        }
+        .carousel-indicators .active {
+            background-color: black; /* Color for the active indicator */
+        }
+    </style>
+</head>
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://picsum.photos/1000/400" class="d-block w-100" alt="Random Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/1001/400" class="d-block w-100" alt="Random Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/1002/400" class="d-block w-100" alt="Random Image 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    </div>
+
+    <script src="/home/symsc43/Desktop/MSC-2/FS/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
