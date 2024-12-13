@@ -1,0 +1,169 @@
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
+# Customer details list
+customer_details = []
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        # Retrieve customer details from form
+        cust_name = request.form['cust_name']
+        email = request.form['email']
+        mob_no = request.form['mob_no']
+        address = request.form['address']
+        pincode = request.form['pincode']
+
+        # Add customer details to list
+        customer_details.append({
+            'cust_name': cust_name,
+            'email': email,
+            'mob_no': mob_no,
+            'address': address,
+            'pincode': pincode
+        })
+
+    return render_template('index.html', customer_details=customer_details)
+
+if __name__ == '__main__':
+    app.run()
+
+
+
+
+
+templates/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Details Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #4CAF50;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Customer Details Form</h1>
+  <form method="POST">
+    <label for="cust_name">Customer Name:</label>
+    <input type="text" id="cust_name" name="cust_name" placeholder="Enter your name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="mob_no">Mobile Number:</label>
+    <input type="text" id="mob_no" name="mob_no" placeholder="Enter your mobile number" required>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
+
+    <label for="pincode">Pincode:</label>
+    <input type="text" id="pincode" name="pincode" placeholder="Enter your pincode" required>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Customer Details:</h2>
+  <table>
+    <tr>
+      <th>Customer Name</th>
+      <th>Email</th>
+      <th>Mobile Number</th>
+      <th>Address</th>
+      <th>Pincode</th>
+    </tr>
+    {% for detail in customer_details %}
+    <tr>
+      <td>{{ detail.cust_name }}</td>
+      <td>{{ detail.email }}</td>
+      <td>{{ detail.mob_no }}</td>
+      <td>{{ detail.address }}</td>
+      <td>{{ detail.pincode }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

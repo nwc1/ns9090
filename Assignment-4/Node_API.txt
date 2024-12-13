@@ -1,0 +1,73 @@
+mkdir google-autocomplete-api
+cd google-autocomplete-api
+npm init -y
+
+
+npm install express axios fast-csv cors
+
+
+index.js
+const express = require('express');
+const axios = require('axios');
+const fs = require('fs');
+const { format } = require('fast-csv');
+const cors = require('cors');
+
+const app = express();
+const PORT = 3000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Route to fetch Google autocomplete suggestions
+app.get('/autocomplete', async (req, res) => {
+    const { query } = req.query;
+
+    if (!query) {
+        return res.status(400).json({ error: 'Query parameter is required' });
+    }
+
+    try {
+        // Fetch suggestions from Google
+        const response = await axios.get(`https://suggestqueries.google.com/complete/search`, {
+            params: {
+                client: 'firefox',
+                q: query
+            }
+        });
+
+        const suggestions = response.data[1]; // Suggestions are in the second array
+
+        // Save the results in a CSV file
+        const fileName = `autocomplete_${Date.now()}.csv`;
+        const writableStream = fs.createWriteStream(fileName);
+        const csvStream = format({ headers: true });
+
+        csvStream.pipe(writableStream);
+        suggestions.forEach(suggestion => {
+            csvStream.write({ suggestion });
+        });
+        csvStream.end();
+
+        writableStream.on('finish', () => {
+            res.download(fileName, () => {
+                fs.unlinkSync(fileName); // Delete the file after download
+            });
+        });
+
+    } catch (error) {
+        console.error('Error fetching autocomplete suggestions:', error);
+        res.status(500).json({ error: 'Failed to fetch autocomplete suggestions' });
+    }
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+
+
+node index.js
+http://localhost:3000/autocomplete?query=NowrosjeeWadiaCollege

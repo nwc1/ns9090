@@ -1,0 +1,119 @@
+from flask import Flask, render_template, request, abort
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+    
+        if not username or not password:
+            abort(400, 'Username and password are required')
+        if len(password) < 8:
+            abort(400, 'Password must be at least 8 characters long')
+        if not username.isalnum():
+            abort(400, 'Username can only contain letters and numbers')
+        return 'Form submitted successfully!'
+    
+    return render_template('register.html')
+
+@app.errorhandler(400)
+def bad_request_error(e):
+    return render_template('error.html', error=e.description), 400
+
+if __name__ == '__main__':
+    app.run()
+
+
+
+
+
+templates/register.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color:#0E4D92;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registeration Form</h1>
+        <form method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+	<br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+	<br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+templates/error.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bad Request (400)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .error {
+            color: red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bad Request (400)</h1>
+    <p class="error">{{ error }}</p>
+</body>
+</html>
